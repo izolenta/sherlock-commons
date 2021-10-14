@@ -2,7 +2,11 @@
   "name": "sherlock-commons",
   "version": "1.0.0",
   "description": "Common libs for Sherlock Combat",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
