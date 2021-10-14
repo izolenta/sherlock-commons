@@ -1,11 +1,17 @@
 {
   "compilerOptions": {
+    /* Truncated compiler options to list only relevant options */
+    "target": "es2016",
     "module": "commonjs",
-    "target": "es2015",
+    "moduleResolution": "node",
     "declaration": true,
-    "outDir": "./dist"
+    "declarationMap": true,
+    "rootDir": ".",
+    "outDir": "./dist",
+    "composite": true,
   },
   "include": [
     "src/**/*"
-  ]
+  ],
+  "references": []  // * Any project that is referenced must itself have a `references` array (which may be empty).
 }
