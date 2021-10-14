@@ -1,7 +1,2 @@
-import {GenericClue} from "./model/clues/genericClue";
-import {BoardState} from "./model/boardState";
-
-export {
-  GenericClue,
-  BoardState,
-};
+export {GenericClue} from "./model/clues/genericClue";
+export {BoardState} from "./model/boardState";
