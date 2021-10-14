@@ -1,0 +1,14 @@
+{
+  "name": "sherlock-commons",
+  "version": "1.0.0",
+  "description": "Common libs for Sherlock Combat",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alexey Sharov",
+  "license": "ISC",
+  "dependencies": {
+    "typescript-array-utils": "^0.1.4"
+  }
+}
