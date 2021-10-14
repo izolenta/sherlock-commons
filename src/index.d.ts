@@ -1,7 +1,7 @@
 import {GenericClue} from "./model/clues/genericClue";
 import {BoardState} from "./model/boardState";
 
-export default {
+export {
   GenericClue,
   BoardState,
 };
