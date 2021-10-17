@@ -38,28 +38,36 @@ export class CellState {
         }
       }
     }
-    throw new RangeError('Cell is not resolved!');
+    console.log('ERR: Cell is not resolved!');
   }
 
   removePossibleTurn(item: number): CellState {
-    this.checkItem(item);
-    let newState = this.possibleTurns - Math.pow(2,item);
-    return new CellState(this.index, {turns: newState, proper: this.properSolution});
+    if (this.checkItem(item)) {
+      let newState = this.possibleTurns - Math.pow(2, item);
+      return new CellState(this.index, {turns: newState, proper: this.properSolution});
+    }
+    else {
+      return this;
+    }
   }
 
   resolveTo(item: number): CellState {
     if (this.hasPossibleItem(item)) {
       return new CellState(this.index, {turns: Math.pow(2, item), proper: this.properSolution})
     }
-    throw new RangeError('Cannot resolve to this item - not possible move!');
+    console.log('ERR: Cannot resolve to this item - not possible move!');
+    return this;
   }
 
-  private checkItem(item: number) {
+  private checkItem(item: number): boolean {
     if (item < 0 || item > 5) {
-      throw new RangeError('Wrong item to resolve');
+      console.log('ERR: Wrong item to resolve!');
+      return false;
     }
     if (!this.hasPossibleItem(item)) {
-      throw new RangeError('this cell does not contain the item!');
+      console.log('ERR: this cell does not contain the item!');
+      return false;
     }
+    return true;
   }
 }
