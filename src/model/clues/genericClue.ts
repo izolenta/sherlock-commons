@@ -10,11 +10,13 @@ export abstract class GenericClue {
   readonly description: string;
   readonly isUsed: boolean;
   readonly items: Array<ClueItem>;
+  readonly type: string;
 
-  protected constructor({descr = '', items = new Array<ClueItem>(), isUsed = false}) {
+  protected constructor({descr = '', items = new Array<ClueItem>(), isUsed = false, type}) {
     this.description = descr;
     this.items = items;
     this.isUsed = isUsed;
+    this.type = type;
   }
 
   isEqual(clue: GenericClue): boolean {
@@ -31,5 +33,9 @@ export abstract class GenericClue {
 
   abstract applyToBoard(state: BoardState): AppliedResult;
 
-//  abstract setUsed(isUsed: boolean): GenericClue;
+  public toJSON() {
+    const {description, ...otherProps} = this;
+    return otherProps;
+  }
+
 }

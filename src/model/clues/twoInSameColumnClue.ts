@@ -3,6 +3,7 @@ import {ClueItem} from "./clueItem";
 import {BoardState} from "../boardState";
 import {updateBoardStateWithCell} from "../../service/gameService";
 import {randomInt} from "../../service/randomService";
+import clueTypes from "./clue.types";
 
 export class TwoInSameColumnClue extends GenericClue {
   constructor(items: Array<ClueItem>, isUsed = false) {
@@ -10,6 +11,7 @@ export class TwoInSameColumnClue extends GenericClue {
       descr: 'Items {0} and {1} should be placed in same column',
       items: items,
       isUsed: isUsed,
+      type: clueTypes.TWO_IN_SAME_COLUMN,
     });
   }
 

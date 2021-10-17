@@ -3,6 +3,7 @@ import {ClueItem} from "./clueItem";
 import {BoardState} from "../boardState";
 import {randomInt} from "../../service/randomService";
 import {updateBoardStateWithCell} from "../../service/gameService";
+import clueTypes from "./clue.types";
 
 export class OneShouldBeBeforeOtherClue extends GenericClue {
   constructor(items: Array<ClueItem>, isUsed = false) {
@@ -11,6 +12,7 @@ export class OneShouldBeBeforeOtherClue extends GenericClue {
         'Also this means that {0} cannot be in rightmost column, and {1} cannot be in leftmost column.',
       items: items,
       isUsed: isUsed,
+      type: clueTypes.ONE_BEFORE_OTHER,
     });
   }
 

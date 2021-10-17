@@ -9,6 +9,11 @@ export class CellState {
     this.index = index;
   }
 
+  public toJSON() {
+    const {properSolution, ...otherProps} = this;
+    return otherProps;
+  }
+
   isSolved(): boolean {
     return (this.possibleTurns & (this.possibleTurns-1)) === 0;
   }

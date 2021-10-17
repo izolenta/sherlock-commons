@@ -3,6 +3,7 @@ import {ClueItem} from "./clueItem";
 import {BoardState} from "../boardState";
 import {randomInt} from "../../service/randomService";
 import {updateBoardStateWithCell} from "../../service/gameService";
+import clueTypes from "./clue.types";
 
 export class ThreeAdjacentClue extends GenericClue {
 
@@ -12,6 +13,7 @@ export class ThreeAdjacentClue extends GenericClue {
         'Also this means that {2} cannot be in leftmost and rightmost columns.',
       items: items,
       isUsed: isUsed,
+      type: clueTypes.THREE_ADJACENT,
     });
   }
 

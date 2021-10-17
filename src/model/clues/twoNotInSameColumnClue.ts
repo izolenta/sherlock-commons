@@ -3,6 +3,7 @@ import {BoardState} from "../boardState";
 import {ClueItem} from "./clueItem";
 import {randomInt} from "../../service/randomService";
 import {updateBoardStateWithCell} from "../../service/gameService";
+import clueTypes from "./clue.types";
 
 export class TwoNotInSameColumnClue extends GenericClue {
 
@@ -11,6 +12,7 @@ export class TwoNotInSameColumnClue extends GenericClue {
       descr: 'Items {0} and {1} should NOT be placed in same column',
       items: items,
       isUsed: isUsed,
+      type: clueTypes.TWO_NOT_IN_SAME_COLUMN,
     });
   }
 

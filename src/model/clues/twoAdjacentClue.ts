@@ -3,6 +3,7 @@ import {ClueItem} from "./clueItem";
 import {BoardState} from "../boardState";
 import {randomInt} from "../../service/randomService";
 import {updateBoardStateWithCell} from "../../service/gameService";
+import clueTypes from "./clue.types";
 
 export class TwoAdjacentClue extends GenericClue {
 
@@ -11,6 +12,7 @@ export class TwoAdjacentClue extends GenericClue {
       descr: 'Items {0} and {2} should be placed in adjacent columns, but the order can be different, i.e. {0}{2} or {2}{0}',
       items: items,
       isUsed: isUsed,
+      type: clueTypes.TWO_ADJACENT,
     });
   }
 
@@ -23,7 +25,7 @@ export class TwoAdjacentClue extends GenericClue {
     return {state: result2.state, isApplied: result1.isApplied || result2.isApplied};
   }
 
-  private checkAdjacent(first: ClueItem, second: ClueItem, state: BoardState): AppliedResult {
+  checkAdjacent(first: ClueItem, second: ClueItem, state: BoardState): AppliedResult {
     let isApplied = false;
     let newState = state.clone();
     for (let i=0; i<6; i++) {

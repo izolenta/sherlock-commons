@@ -3,6 +3,7 @@ import {ClueItem} from "./clueItem";
 import {BoardState} from "../boardState";
 import {randomInt} from "../../service/randomService";
 import {updateBoardStateWithCell} from "../../service/gameService";
+import clueTypes from "./clue.types";
 
 export class TwoNotAdjacentClue extends GenericClue {
 
@@ -11,6 +12,7 @@ export class TwoNotAdjacentClue extends GenericClue {
       descr: 'Items {0} and {2} should NOT be placed in adjacent columns',
       items: items,
       isUsed: isUsed,
+      type: clueTypes.TWO_NOT_ADJACENT,
     });
   }
 
