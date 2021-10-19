@@ -20,7 +20,7 @@ export abstract class GenericClue {
   }
 
   isEqual(clue: GenericClue): boolean {
-    if (this.constructor.name !== clue.constructor.name || this.items.length !== clue.items.length) {
+    if (this.type !== clue.type || this.items.length !== clue.items.length) {
       return false;
     }
     for (let index = 0; index < this.items.length; index++) {
@@ -32,6 +32,8 @@ export abstract class GenericClue {
   }
 
   abstract applyToBoard(state: BoardState): AppliedResult;
+
+  abstract setUsed(isUsed: boolean): GenericClue;
 
   public toJSON() {
     const {description, ...otherProps} = this;
