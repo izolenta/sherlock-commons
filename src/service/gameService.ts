@@ -129,7 +129,7 @@ function removeItemAndCheckResolved(field: BoardState, position: number, item: n
 function generateRuleSet(field: BoardState, difficulty: number): GeneratedRuleSet | undefined {
   let clues = new Array<GenericClue>();
   let newField = field.clone();
-  for (let i=0; i< difficulty*15; i++) {
+  for (let i=0; i<difficulty*5; i++) {
     newField = openRandomCell(newField);
   }
   let fieldClone;
